@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantine Bestelsysteem</title>
+    <link rel="stylesheet" href="js challange.css"> <!-- Link naar CSS -->
+</head>
+<body>
+    <h1>Kantine Bestelsysteem</h1>
+    <div id="container">
+        <!-- Linker blok: Bestelformulier -->
+        <div id="order-form">
+            <h2>Bestellijst</h2>
+            <div>
+                <label for="product1">Broodje Kaas (€2.50):</label>
+                <input type="number" id="product1" min="0" value="0">
+            </div>
+            <div>
+                <label for="product2">Appelsap (€1.80):</label>
+                <input type="number" id="product2" min="0" value="0">
+            </div>
+            <div>
+                <label for="product3">Reep Chocolade (€1.20):</label>
+                <input type="number" id="product3" min="0" value="0">
+            </div>
+            <div>
+                <label for="product4">Koffie (€2.00):</label>
+                <input type="number" id="product4" min="0" value="0">
+            </div>
+            <button id="reset-btn">OPNIEUW</button>
+        </div>
+
+        <!-- Rechter blok: Bestellingsoverzicht -->
+        <div id="order-summary">
+            <h2>Bestellingsoverzicht</h2>
+            <div id="summary-content"></div>
+            <div id="total-price"></div>
+        </div>
+    </div>
+    <script src="js challange .js"></script> <!-- Link naar JavaScript -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif; /* Gebruik een eenvoudig lettertype */
+    margin: 20px; /* Ruimte rond de pagina */
+    background-color: #f0f0f0; /* Lichtgrijze achtergrond */
+}
+
+h1 {
+    text-align: center; /* Titel in het midden van de pagina */
+}
+
+#container {
+    display: flex; /* Plaats elementen naast elkaar */
+    justify-content: space-between; /* Ruimte tussen de elementen */
+    margin-top: 20px; /* Ruimte boven de container */
+}
+
+#order-form, #order-summary {
+    width: 45%; /* Beide blokken krijgen 45% van de breedte */
+    background-color: #fff; /* Witte achtergrond */
+    padding: 15px; /* Ruimte binnen de blokken */
+    border: 1px solid #ccc; /* Dunne grijze rand */
+    border-radius: 5px; /* Zachte hoeken */
+}
+
+label {
+    display: block; /* Zet elk label op een nieuwe regel */
+    margin-bottom: 5px; /* Kleine ruimte onder het label */
+}
+
+input[type="number"] {
+    width: 50px; /* Klein invoerveld voor aantallen */
+    margin-bottom: 15px; /* Ruimte onder het invoerveld */
+}
+
+button {
+    margin-top: 10px; /* Ruimte boven de knop */
+    background-color: #007BFF; /* Blauwe knop */
+    color: white; /* Witte tekst */
+    border: none; /* Geen rand */
+    padding: 10px; /* Ruimte in de knop */
+    cursor: pointer; /* Wijzig de muisaanwijzer naar een handje */
+}
+
+button:hover {
+    background-color: #0056b3; /* Donkerdere kleur bij hover */
+}
+
+#summary-content div {
+    margin-bottom: 10px; /* Ruimte tussen de regels in de samenvatting */
+}
+
+#total-price {
+    font-weight: bold; /* Maak de tekst dikgedrukt */
+    margin-top: 10px; /* Extra ruimte boven de totaalprijs */
+}
