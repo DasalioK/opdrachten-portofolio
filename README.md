@@ -29,6 +29,8 @@ Bij deze opdracht moest ik niet alleen het project bouwen, maar ook **uitleggen 
 - PHP
 - Python
 - JavaScript
+- HTML
+- CSS
 
 ## Structuur
 
