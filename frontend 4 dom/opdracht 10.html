@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Elektronica Producten</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #cart {
+            border: 1px solid #b3b3b3;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .clickableRow {
+            display: flex;
+            justify-content: space-between;
+            background-color: #e6f7ff;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 1px solid #b3d9ff;
+        }
+
+        .clickableRow:hover {
+            background-color: #cceeff;
+        }
+
+        .detailRow {
+            display: none;
+            background-color: #f9f9f9;
+            margin-left: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #dddddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product {
+            font-weight: bold;
+        }
+
+        .orderButton {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .orderButton:hover {
+            background-color: #45a049;
+        }
+
+        #clearCartButton {
+            padding: 5px 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+
+        #clearCartButton:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+
+<div id="cart">
+    <h3>Winkelmandje</h3>
+    <ul id="cartItems"></ul>
+    <button id="clearCartButton">Winkelmandje Leegmaken</button>
+</div>
+
+<div id="infoContainer">
+    <div class="clickableRow">
+        <div class="product">iPhone 13</div>
+        <div class="category">Smartphone</div>
+    </div>
+    <div class="detailRow">
+        <span>Merk: Apple | Opslag: 128GB | Kleur: Zwart</span>
+        <button class="orderButton">Bestellen</button>
+    </div>
+
+    <div class="clickableRow">
+        <div class="product">Samsung Galaxy S21</div>
+        <div class="category">Smartphone</div>
+    </div>
+    <div class="detailRow">
+        <span>Merk: Samsung | Opslag: 256GB | Kleur: Phantom Gray</span>
+        <button class="orderButton">Bestellen</button>
+    </div>
+
+    <div class="clickableRow">
+        <div class="product">Dell XPS 13</div>
+        <div class="category">Laptop</div>
+    </div>
+    <div class="detailRow">
+        <span>Merk: Dell | Scherm: 13.3 inch | CPU: Intel i7</span>
+        <button class="orderButton">Bestellen</button>
+    </div>
+
+    <div class="clickableRow">
+        <div class="product">MacBook Air</div>
+        <div class="category">Laptop</div>
+    </div>
+    <div class="detailRow">
+        <span>Merk: Apple | Scherm: 13.3 inch | CPU: M1</span>
+        <button class="orderButton">Bestellen</button>
+    </div>
+
+    <div class="clickableRow">
+        <div class="product">Sony WH-1000XM4</div>
+        <div class="category">Hoofdtelefoon</div>
+    </div>
+    <div class="detailRow">
+        <span>Merk: Sony | Type: Over-ear | Noise Cancelling: Ja</span>
+        <button class="orderButton">Bestellen</button>
+    </div>
+
+    <div class="clickableRow">
+        <div class="product">Google Nest Hub</div>
+        <div class="category">Smart Home</div>
+    </div>
+    <div class="detailRow">
+        <span>Merk: Google | Scherm: 7 inch | Assistent: Google Assistent</span>
+        <button class="orderButton">Bestellen</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const clickableRows = document.querySelectorAll('.clickableRow');
+        const orderButtons = document.querySelectorAll('.orderButton');
+        const cartItems = document.getElementById('cartItems');
+        const clearCartButton = document.getElementById('clearCartButton');
+
+        clickableRows.forEach(function(row) {
+            row.addEventListener('click', function() {
+                const detailRow = this.nextElementSibling;
+                if (detailRow.style.display === 'block') {
+                    detailRow.style.display = 'none';
+                } else {
+                    detailRow.style.display = 'block';
+                }
+            });
+        });
+
+        orderButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const product = this.parentElement.previousElementSibling.querySelector('.product').textContent;
+                const listItem = document.createElement('li');
+                listItem.textContent = product;
+                cartItems.appendChild(listItem);
+            });
+        });
+
+        clearCartButton.addEventListener('click', function() {
+            cartItems.innerHTML = '';
+        });
+    });
+</script>
+
+</body>
+</html>

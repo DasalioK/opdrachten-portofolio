@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Achtergrondkleur Veranderen</title>
+</head>
+<body>
+    <!--DAsalio kapel-->
+    <p class="kleurVerander">Dit is een voorbeeldtekst 1.</p>
+    <p class="kleurVerander">Dit is een voorbeeldtekst 2.</p>
+    <p class="kleurVeranderNiet">Dit is een voorbeeldtekst 3.</p>
+    <p class="kleurVerander">Dit is een voorbeeldtekst 4.</p>
+  
+    <button onclick="veranderAchtergrondKleur()">Verander Achtergrondkleur</button>
+
+    <script>
+        function veranderAchtergrondKleur() {
+            var tekstElementen = document.querySelectorAll(".kleurVerander");
+            
+            tekstElementen.forEach(function(element) {
+                element.style.backgroundColor = "green";
+            });
+        }
+    </script>
+</body>
+</html>

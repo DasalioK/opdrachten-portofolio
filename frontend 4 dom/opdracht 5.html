@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Schaatser Ronde Teller</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td.rondes {
+            cursor: pointer;
+            background-color: #e6ffe6;
+        }
+        td.rondes:hover {
+            background-color: #ccffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Schaatser</th>
+            <th>Aantal Rondes</th>
+        </tr>
+        <tr>
+            <td>Mo Mot</td>
+            <td class="rondes" onclick="verhoogRondes(this)">0</td>
+        </tr>
+        <tr>
+            <td>Ayoub Allemaal</td>
+            <td class="rondes" onclick="verhoogRondes(this)">0</td>
+        </tr>
+        <tr>
+            <td>Klaas Kaas</td>
+            <td class="rondes" onclick="verhoogRondes(this)">0</td>
+        </tr>
+        <tr>
+            <td>Goedele Goedgeluk</td>
+            <td class="rondes" onclick="verhoogRondes(this)">0</td>
+        </tr>
+        <tr>
+            <td>Roos Rommelhuis</td>
+            <td class="rondes" onclick="verhoogRondes(this)">0</td>
+        </tr>
+        <tr>
+            <td>Lars Leeghoofd</td>
+            <td class="rondes" onclick="verhoogRondes(this)">0</td>
+        </tr>
+    </table>
+
+    <script>
+        
+        function verhoogRondes(cell) {
+            
+            var huidigeRondes = parseInt(cell.innerText);
+
+            var nieuweRondes = huidigeRondes + 1;
+
+            cell.innerText = nieuweRondes;
+        }
+    </script>
+
+</body>
+</html>
+

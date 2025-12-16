@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Tekststijl Veranderen</title>
+</head>
+<body>
+    <h1>Dit is een koptekst</h1>
+    <p>Dit is een gewone paragraaf.</p>
+    <p class="speciaal">Dit is een speciale paragraaf.</p>
+    <div>Dit is een div element.</div>
+    <p class="speciaal">Nog een speciale paragraaf.</p>
+    <p id="speciaal">Nog een speciale paragraaf.</p>
+
+    <button onclick="veranderTekstStijl()">Verander Tekststijl</button>
+
+    <script>
+    let isStijlVeranderd = false;
+
+    function veranderTekstStijl() {
+        const elementen = document.querySelectorAll('.speciaal, #speciaal');
+        for (let i = 0; i < elementen.length; i++) {
+            if (isStijlVeranderd) {
+                elementen[i].style.color = '';
+                elementen[i].style.fontWeight = '';
+                elementen[i].style.fontStyle = '';
+            } else {
+                elementen[i].style.color = 'green';
+                elementen[i].style.fontWeight = 'bold';
+                elementen[i].style.fontStyle = 'italic';
+            }
+        }
+        isStijlVeranderd = !isStijlVeranderd;
+    }
+    </script>
+</body>
+</html>

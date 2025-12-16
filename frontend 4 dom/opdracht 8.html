@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Schaatser Ronde Teller</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td.rondes {
+            cursor: pointer;
+            background-color: #e6ffe6; /* Standaard groen */
+        }
+        td.rondes:hover {
+            background-color: #ccffcc; /* Iets lichter groen bij hover */
+        }
+    </style>
+</head>
+<body>
+
+    <table id="rondeTellerTabel">
+        <tr>
+            <th>Schaatser</th>
+            <th>Aantal Rondes</th>
+        </tr>
+        <tr>
+            <td>Mo Mot</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Ayoub Allemaal</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Klaas Kaas</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Goedele Goedgeluk</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Roos Rommelhuis</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Lars Leeghoofd</td>
+            <td class="rondes">0</td>
+        </tr>
+    </table>
+
+    <script>
+        // Wacht tot de pagina geladen is
+        document.addEventListener('DOMContentLoaded', function() {
+            // Selecteer alle cellen met de class "rondes"
+            var rondesCellen = document.querySelectorAll('#rondeTellerTabel .rondes');
+
+            rondesCellen.forEach(function(cel) {
+                // Voeg een click-event toe aan elke cel
+                cel.addEventListener('click', function(event) {
+                    var huidigeRondes = parseInt(cel.innerText); // Haal het huidige aantal rondes op
+
+                    if (event.shiftKey) {
+                        // Shift-klik: verlagen als het hoger is dan 0
+                        if (huidigeRondes > 0) {
+                            cel.innerText = huidigeRondes - 1;
+                            cel.style.backgroundColor = "#ffcccc"; // Rood bij verlaging
+                        }
+                    } else {
+                        // Normale klik: verhogen
+                        cel.innerText = huidigeRondes + 1;
+                        cel.style.backgroundColor = "#e6ffe6"; // Groen bij verhoging
+                    }
+                });
+            });
+        });
+
+        // Commentaar door Dasalio Kapel
+    </script>
+
+</body>
+</html>

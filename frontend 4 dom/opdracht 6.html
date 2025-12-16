@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Schaatser Ronde Teller</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td.rondes {
+            cursor: pointer;
+            background-color: #e6ffe6;
+        }
+        td.rondes:hover {
+            background-color: #ccffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="rondeTellerTabel">
+        <tr>
+            <th>Schaatser</th>
+            <th>Aantal Rondes</th>
+        </tr>
+        <tr>
+            <td>Mo Mot</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Ayoub Allemaal</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Klaas Kaas</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Goedele Goedgeluk</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Roos Rommelhuis</td>
+            <td class="rondes">0</td>
+        </tr>
+        <tr>
+            <td>Lars Leeghoofd</td>
+            <td class="rondes">0</td>
+        </tr>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var rondesCellen = document.querySelectorAll('#rondeTellerTabel .rondes');
+            rondesCellen.forEach(function(cel) {
+                cel.addEventListener('click', verhoogRondes);
+            });
+        });
+
+        function verhoogRondes() {
+            var huidigeRondes = parseInt(this.innerText);
+            this.innerText = huidigeRondes + 1;
+        }
+    </script>
+
+</body>
+</html>

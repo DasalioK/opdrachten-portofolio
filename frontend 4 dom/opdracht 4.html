@@ -1,0 +1,23 @@
+<div id="nummerDiv">123</div>
+<button onclick="toonGetal()">Toon Getal</button>
+<button onclick="verhoogGetal()">Verhoog Getal</button> 
+<!-- Dasalio kapel-->
+<script>
+    function toonGetal() {
+        var divElement = document.getElementById('nummerDiv');
+        var getal = divElement.innerText; 
+        alert("Het getal in de div is: " + getal);
+    }
+
+    function verhoogGetal() {
+        var divElement = document.getElementById('nummerDiv');
+        var getal = divElement.innerText; 
+
+        console.log("Origineel getal: " + getal); 
+        var verhoogdGetal = parseInt(getal) + 1;
+
+        console.log("Verhoogd getal: " + verhoogdGetal); 
+
+        divElement.innerText = verhoogdGetal;
+    }
+</script>
